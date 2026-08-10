@@ -1,0 +1,37 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: sdlc-plugins-10
+  title: SDLC-10
+  description: SDLC plugin for Flowsource
+  annotations:
+    # For GitHub plugin
+    github.com/project-slug: cts-suresh/flowsource-git-10
+    flowsource/github-repo-owner: cts-suresh
+    flowsource/github-repo-name: flowsource-git-10
+    
+    flowsource/catalog-scheduler-enabled: "true"
+    flowsource/schedule-interval: "PT30M"   
+    flowsource/scheduler-source: github
+    
+    backstage.io/techdocs-ref: dir:.
+    # For JIRA plugin
+    flowsource/jira-project-key: ISGFS
+    flowsource/durationInDays: '90'
+ 
+    # For Jenkins plugin
+    # flowsource/jenkins-pipelines: fs-sdlc/main
+  tags:
+    - github
+    - jira
+    - jenkins
+    - flowsource
+  links:
+    - url: https://github.com/cts-suresh/flowsource-git-10
+      title: GitHub Repo
+      icon: github
+spec:
+  type: service
+  lifecycle: experimental
+  owner: group:default/catalog-admin
+  system: flowsource
